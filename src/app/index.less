@@ -15,17 +15,12 @@ body {
   background-color: @color-light;
 }
 
-.logo-next-group {
-  background-image: url('../assets/images/logo-next-group.png');
-  width: 131px;
-  height: 69px;
-  display: inline-block;
-}
-
 section {
   position: relative;
   font-family: Arial, "Helvetica Neue", Verdana, Arial, sans-serif;
   color: @color-black;
+  padding-top: 60px;
+  padding-bottom: 90px;
 }
 
 .section-title {
@@ -51,6 +46,104 @@ section {
 .navbar-nav {
   text-transform: uppercase;
   font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.navbar-static-top {
+  padding-top: 50px;
+  background-image: url("../assets/images/nav-background.png");
+  background-repeat: repeat-x;
+  background-position: center top;
+  position: fixed;
+  width: 100%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.logo-next-group {
+  background-image: url('../assets/images/logo-next-group.png');
+  width: 131px;
+  height: 69px;
+  display: inline-block;
+  position: relative;
+  top: -40px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/** scrolling down */
+.headroom--unpinned {
+  padding-top: 20px;
+  li a {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+  .logo-next-group {
+    top: -30px;
+    transform: scale(0.7, 0.7);
+  }
+}
+
+/** scrolling up */
+.headroom--pinned {
+
+}
+
+
+.nav {
+  li {
+    margin-left: 14px;
+    &:first-child {
+      margin-left: 0;
+    }
+    a {
+      color: @color-light;
+      border-bottom-style: solid;
+      border-bottom-width: 10px;
+      border-bottom-color: transparent;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        border-bottom-color: @color-light-blue;
+      }
+      &.active {
+        border-bottom-color: @color-light-blue;
+      }
+    }
+  }
+}
+
+.navbar-toggle {
+  position: relative;
+  float: right;
+  margin-right: 15px;
+  padding: 9px 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: @color-dark;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  .icon-bar {
+    background-color: @color-light-grey;
+  }
+}
+
+.login-link {
+  padding-right: 20px;
+  background-image: url("../assets/images/padlock.png");
+  background-repeat: no-repeat;
+  background-position: center right;
 }
 
 .test-btn {
@@ -90,13 +183,22 @@ section {
   color: #ffffff;
 }
 
+.section-banners {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .section-services {
   background-color: @color-light-grey;
   padding-bottom: 90px;
 }
 
 .service-item {
-
+  &:hover {
+    .service-icon {
+      transform: scale(1.1, 1.1);
+    }
+  }
 }
 
 .service-icon {
@@ -104,6 +206,11 @@ section {
   min-height: 110px;
   background-position: center center;
   background-repeat: no-repeat;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .service-icon-simple {
@@ -155,6 +262,7 @@ section {
   border-width: 0;
   text-align: center;
   padding: 18px 22px;
+  color: @color-light;
 }
 
 
@@ -181,7 +289,7 @@ section {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 20px;
-
+    padding: 6px 10px;
     -webkit-transition: all 0.4s;
     -moz-transition: all 0.4s;
     -ms-transition: all 0.4s;
@@ -206,13 +314,15 @@ section {
     }
   }
 
-  &:hover {
+  &:hover,
+  &.active{
     background-color: @color-light-grey;
     border-color: #e1e1e1;
     .solution-title {
 
       color: @color-light;
       background-color: @color-dark-green;
+
       &:after {
         border-top-color: @color-dark-green;
       }
@@ -226,11 +336,24 @@ section {
   color: @color-dark;
 }
 
+.solution-item {
+  &:hover {
+    .solution-icon {
+      transform: scale(1.1, 1.1);
+    }
+  }
+}
+
 .solution-icon {
   background-repeat: no-repeat;
   background-position: center center;
   min-width: 100%;
   min-height: 80px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .solution-icon-recruitment {
@@ -255,6 +378,17 @@ section {
 
 .solution-icon-feedback {
   background-image: url('../assets/images/solution-feedback.png');
+}
+
+.popover {
+  max-width: 200%;
+  font-size: 12px;
+  border-radius: 0px;
+  background-color: @color-light-grey;
+  box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2);
+  ol {
+    padding-left: 14px;
+  }
 }
 
 
@@ -349,7 +483,7 @@ section {
 
 .section-calculator {
   color: @color-dark;
-
+  padding-bottom: 0px;
   .section-title {
     text-transform: none;
     color: @color-dark;
@@ -370,6 +504,7 @@ section {
   background-color: #a1a1a1;
   background-position: center;
   background-size: cover;
+  background-image: url("../assets/images/calculator-bg.jpg");
   padding: 50px 0;
 }
 
@@ -380,14 +515,62 @@ section {
 
 }
 
-.client-item {
+.grid-table {
+  width: 100%;
+  margin-bottom: 20px;
+  tr {
+    td {
+      border-width: 1px;
+      border-style: solid;
+      border-color: #c1c1c1;
+      &:first-child {
+        border-left-color: transparent;
+      }
+      &:last-child {
+        border-right-color: transparent;
+      }
+    }
+    &:first-child {
+      td {
+        border-top-color: transparent;
+      }
+    }
+    &:last-child {
+      td {
+        border-bottom-color: transparent;
+      }
+    }
+  }
+}
+
+.client-icon {
+  width: 33.33%;
+  text-align: center;
+  cursor: pointer;
   position: relative;
-  .logo-grayscale {
-    position: absolute;
+  &:hover {
+    .icon-colored {
+      opacity: 1;
+    }
   }
-  .logo-colored {
-    position: absolute;
+  img {
+    max-width: 100%;
+    position: relative;
   }
+  .icon-colored {
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -ms-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+  .icon-bw {
+    z-index: 1;
+  }
+
 }
 
 .section-contact {
@@ -398,6 +581,7 @@ section {
   border: none;
   width: 100%;
   height: 320px;
+  margin-bottom: 20px;
 }
 
 .contact-link {
@@ -440,4 +624,106 @@ section {
   border-color: #ff5353;
   outline: 0;
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(186, 2, 0, 0.61);
+}
+
+address {
+  margin-top: 14px;
+  padding-bottom: 20px;
+  margin-right: 30px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: @color-light-grey;
+
+}
+
+footer {
+  color: @color-light;
+  padding-top: 78px;
+  padding-bottom: 61px;
+  background-color: #3A3A3A;
+  text-align: center;
+  img {
+    margin-bottom: 20px;
+  }
+}
+
+.social-icon {
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  margin: 4px;
+  width: 96px;
+  height: 96px;
+  font-size: 0;
+  text-indent: -9999px;
+}
+
+.icon-mono {
+  background: url("../assets/images/icons1.png");
+  background-color: #595959;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+}
+
+/* facebook */
+.icon-mono.facebook {
+  background-position: 0 0;
+}
+
+.icon-mono.facebook:hover {
+  background-color: #3b5998;
+  background-position: 0 -96px;
+}
+
+/* twitter */
+.icon-mono.twitter {
+  background-position: -96px 0;
+}
+
+.icon-mono.twitter:hover {
+  background-color: #4099ff;
+  background-position: -96px -96px;
+}
+
+/* google plus */
+.icon-mono.googleplus {
+  background-position: -192px 0;
+}
+
+.icon-mono.googleplus:hover {
+  background-color: #d34836;
+  background-position: -192px -96px;
+}
+.carousel-inner > .item > img {
+  width: 100%;
+}
+
+.carousel-control {
+  display: none;
+}
+
+.carousel-indicators {
+
+  li {
+    width: 40px;
+    height: 11px;
+    margin: 1px;
+    border-radius: 0;
+    border-width: 0;
+    background-color: @color-light-blue;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -ms-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    transition: all 0.4s;
+    &:hover,
+    &.active {
+      width: 40px;
+      height: 11px;
+      margin: 1px;
+      border-width: 0;
+      background-color: @color-light;
+    }
+  }
+
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('nextgroup', ['ngAnimate', 'ngTouch', 'ui.router', 'ui.bootstrap'])
+angular.module('nextgroup', ['ngAnimate', 'ngTouch', 'ui.router', 'ui.bootstrap', 'duScroll', 'headroom'])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
     //$locationProvider.html5Mode(true);
@@ -15,11 +15,15 @@ angular.module('nextgroup', ['ngAnimate', 'ngTouch', 'ui.router', 'ui.bootstrap'
         views: {
           nav: {
             templateUrl: 'components/navbar/navbar.html',
-            controller: 'NavbarCtrl'
+            controller: 'NavbarCtrl as vm'
           },
           content: {
             templateUrl: 'app/home/home.html',
             controller: 'HomeCtrl as vm'
+          },
+          footer: {
+            templateUrl: 'components/footer/footer.html',
+            controller: 'FooterCtrl as vm'
           }
         }
       })
