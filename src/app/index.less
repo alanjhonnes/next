@@ -97,12 +97,13 @@ section {
 
 .nav {
   li {
-    margin-left: 14px;
+    margin-left: 8px;
     &:first-child {
       margin-left: 0;
     }
     a {
       color: @color-light;
+      padding: 15px;
       border-bottom-style: solid;
       border-bottom-width: 10px;
       border-bottom-color: transparent;
@@ -120,8 +121,22 @@ section {
         border-bottom-color: @color-light-blue;
       }
     }
+    .btn-try-for-free {
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 6px;
+      border-color: @color-light;
+      &:hover,
+      &:focus,
+      &.active {
+        background-color: @color-light-blue;
+        border-color: @color-light;
+      }
+    }
   }
 }
+
+
 
 .navbar-toggle {
   position: relative;
@@ -249,7 +264,6 @@ section {
 }
 
 .calculate-title {
-
   font-family: Georgia, "Times New Roman", "Bitstream Charter", Times, serif;
   font-size: 60px;
 }
@@ -337,7 +351,8 @@ section {
 }
 
 .solution-item {
-  &:hover {
+  &:hover,
+  &.active {
     .solution-icon {
       transform: scale(1.1, 1.1);
     }
@@ -726,4 +741,11 @@ footer {
     }
   }
 
+}
+
+.form-control {
+  background-color: #e1e1e1;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #cccccc;
 }

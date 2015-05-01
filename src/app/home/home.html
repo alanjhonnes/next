@@ -101,7 +101,7 @@
         <div class="row">
             <div class="col-md-6 col-lg-4">
                 <div class="solution-item" ng-click="vm.toggleSolution('recruitment')"
-                     popover-html-unsafe="{{ vm.recruitment }}" popover-placement="bottom"
+                     popover-html-unsafe="{{ vm.recruitment }}" popover-placement="bottom" popover-title="Testes"
                      ng-class="{active: vm.activeSolution === 'recruitment'}" popover-toggle="vm.activeSolution === 'recruitment'">
                     <div class="solution-icon solution-icon-recruitment"></div>
                     <h4 class="solution-title">Recrutamento</h4>
@@ -287,30 +287,49 @@
                     <p class="section-info">
                         Calcule o que você vai poupar em tempo e dinheiro, além do grande impacto no ambiente e na performance da sua empresa.
                     </p>
-                    <div class="form-horizontal">
+                    <div class="form-horizontal form-group">
                         <label for="input-employees">Quantos funcionários você tem?</label>
-                        <input ng-model="vm.employees" id="input-employees" type="number" min="0">
-
+                        <input class="form-control" ng-model="vm.employees" id="input-employees" type="number" min="0">
+                    </div>
+                    <div class="form-horizontal form-group">
                         <label for="input-processes">Quantos processos seletivos você realiza por mês?</label>
-                        <input ng-model="vm.processes" id="input-processes" type="number" min="0">
+                        <input class="form-control" ng-model="vm.processes" id="input-processes" type="number" min="0">
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div ng-show="vm.hasValues">
+    <div ng-show="vm.employees > 0 && vm.processes > 0">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
 
+                    <p>Porcentagem horas com THT{{ vm.percentageTime }}%</p>
+
+                    <p>{{vm.hoursPerProcessWithoutTHT}} horas por processo sem THT.</p>
+                    <p>{{vm.hoursPerProcessWithTHT}} horas por processo com THT.</p>
+                    <p>{{vm.hoursSavedPerProcess}} horas economizadas por processo.</p>
+
+                    <p>{{vm.hoursSavedPerMonth}} horas economizadas por mês.</p>
+
+                    <p>{{vm.hoursSavedPerYear}} horas economizadas por mês.</p>
+
                 </div>
                 <div class="col-md-6">
+                    <p>{{vm.percentageMoney}}%</p>
 
+                    <p>R${{ vm.moneySavedPerYear}}</p>
+
+                    <p>sdlkjhfskjlhflsdhfkjksdjhf</p>
+
+                    <p>sdlkjhfskjlhflsdhfkjksdjhf</p>
+
+                    <p>sdlkjhfskjlhflsdhfkjksdjhf</p>
                 </div>
             </div>
         </div>
     </div>
-    <a href="#section-clients" du-smooth-scroll><button class="btn-down-arrow"></button></a>
+    <!--<a href="#section-clients" du-smooth-scroll><button class="btn-down-arrow"></button></a>-->
 </section>
 
 <section class="section-clients" id="section-clients">
