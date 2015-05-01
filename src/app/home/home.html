@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <h1 class="section-title">O que fazemos</h1>
-                <p class="section-info">O Next Group oferece uma plataforma de testes online
+                <p class="section-info">A Next Group oferece uma plataforma de testes online
                     para todas as suas necessidades em RH.</p>
             </div>
         </div>
@@ -93,7 +93,7 @@
             <div class="col-xs-12">
                 <h1 class="section-title">Soluções</h1>
                 <p class="section-info">
-                    Com a plataforma THT - The Talent System, o Next Group traz pela primeira vez
+                    Com a plataforma THT - The Talent System, a Next Group traz pela primeira vez
                     ao Brasil uma ferramenta de avaliação DISC tão completa e integrada.
                 </p>
             </div>
@@ -101,25 +101,13 @@
         <div class="row">
             <div class="col-md-6 col-lg-4">
                 <div class="solution-item" ng-click="vm.toggleSolution('recruitment')"
-                     popover-html-unsafe="{{ vm.recruitment }}" popover-placement="bottom" popover-title="Testes"
+                     popover-html-unsafe="{{ vm.recruitment }}" popover-placement="bottom"
                      ng-class="{active: vm.activeSolution === 'recruitment'}" popover-toggle="vm.activeSolution === 'recruitment'">
                     <div class="solution-icon solution-icon-recruitment"></div>
                     <h4 class="solution-title">Recrutamento</h4>
                     <p class="solution-content">
                         Selecione mais rápido e melhor, avalie o perfil DISC e 14 competências e faça
                         "rankings" dos melhores candidatos.
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="solution-item" ng-click="vm.toggleSolution('development')"
-                     popover-html-unsafe="{{ vm.development }}" popover-placement="bottom"
-                        ng-class="{active: vm.activeSolution === 'development'}" popover-toggle="vm.activeSolution === 'development'">
-                    <div class="solution-icon solution-icon-development"></div>
-                    <h4 class="solution-title">Desenvolvimento</h4>
-                    <p class="solution-content">
-                        Avalie de modo simples e rápido, defina oportunidades de crescimento
-                        e faça recomendações concretas de formação.
                     </p>
                 </div>
             </div>
@@ -136,14 +124,14 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-4">
-                <div class="solution-item" ng-click="vm.toggleSolution('team')"
-                     popover-html-unsafe="{{ vm.team }}" popover-placement="bottom"
-                     ng-class="{active: vm.activeSolution === 'team'}" popover-toggle="vm.activeSolution === 'team'">
-                    <div class="solution-icon solution-icon-team"></div>
-                    <h4 class="solution-title">Equipe</h4>
+                <div class="solution-item" ng-click="vm.toggleSolution('development')"
+                     popover-html-unsafe="{{ vm.development }}" popover-placement="bottom"
+                        ng-class="{active: vm.activeSolution === 'development'}" popover-toggle="vm.activeSolution === 'development'">
+                    <div class="solution-icon solution-icon-development"></div>
+                    <h4 class="solution-title">Desenvolvimento</h4>
                     <p class="solution-content">
-                        Entenda melhor seu pessoal, conheça as competências de cada um e crie estratégias de
-                        desenvolvimento para equipes.
+                        Avalie de modo simples e rápido, defina oportunidades de crescimento
+                        e faça recomendações concretas de formação.
                     </p>
                 </div>
             </div>
@@ -159,6 +147,20 @@
                     </p>
                 </div>
             </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="solution-item" ng-click="vm.toggleSolution('team')"
+                     popover-html-unsafe="{{ vm.team }}" popover-placement="bottom"
+                     ng-class="{active: vm.activeSolution === 'team'}" popover-toggle="vm.activeSolution === 'team'">
+                    <div class="solution-icon solution-icon-team"></div>
+                    <h4 class="solution-title">Equipe</h4>
+                    <p class="solution-content">
+                        Entenda melhor seu pessoal, conheça as competências de cada um e crie estratégias de
+                        desenvolvimento para equipes.
+                    </p>
+                </div>
+            </div>
+
             <div class="col-md-6 col-lg-4">
                 <div class="solution-item" ng-click="vm.toggleSolution('feedback')"
                      popover-html-unsafe="{{ vm.feedback }}" popover-placement="bottom"
@@ -209,7 +211,7 @@
                     <h4 class="advantage-title">Testes Inovadores</h4>
                     <p class="advantage-content">
                         Alguns de nossos testes são únicos: identificadores, rankings, perfis por observação,
-                        alinhamento de pessoas com outras pessoas, cargos ou organizações etc.
+                        alinhamento de pessoas com outras pessoas, cargos ou organizações, etc.
                     </p>
                 </div>
             </div>
@@ -230,18 +232,17 @@
                     <div class="advantage-icon advantage-icon-5 advantage-icon-type-4"></div>
                     <h4 class="advantage-title">Testes Editáveis</h4>
                     <p class="advantage-content">
-                        Todos os testes são editáveis, o que lhe permite customizar ainda mais a
-                        informação de acordo as suas necessidades.
+                        Todos os testes são editáveis, o que lhe permite aprimorar ainda mais a informação de acordo
+                        com as suas necessidades.
                     </p>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="advantage-item">
                     <div class="advantage-icon advantage-icon-6 advantage-icon-type-3"></div>
-                    <h4 class="advantage-title">Treinamento Gratuito</h4>
+                    <h4 class="advantage-title">Certificação Gratuita</h4>
                     <p class="advantage-content">
-                        Oferecemos treinamento e suporte técnico sem custo quando necessário,
-                        para transformar seu pessoal em uma vantagem competitiva. 
+                        Oferecemos certificação básica e suporte técnico sem custo quando necessário.
                     </p>
                 </div>
             </div>
@@ -262,7 +263,7 @@
                     <div class="advantage-icon advantage-icon-8 advantage-icon-type-1"></div>
                     <h4 class="advantage-title">Serviços de Alta Qualidade</h4>
                     <p class="advantage-content">
-                        Com cada nova compra de testes, estabelecemos um compromisso de alta qualidade
+                        A cada nova compra de testes, estabelecemos um compromisso de alta qualidade
                         em serviços. Somos seu aliado na busca pelo sucesso. 
                     </p>
                 </div>
@@ -288,11 +289,11 @@
                         Calcule o que você vai poupar em tempo e dinheiro, além do grande impacto no ambiente e na performance da sua empresa.
                     </p>
                     <div class="form-horizontal form-group">
-                        <label for="input-employees">Quantos funcionários você tem?</label>
+                        <label for="input-employees">Quantos colaboradores a empresa possui?</label>
                         <input class="form-control" ng-model="vm.employees" id="input-employees" type="number" min="0">
                     </div>
                     <div class="form-horizontal form-group">
-                        <label for="input-processes">Quantos processos seletivos você realiza por mês?</label>
+                        <label for="input-processes">Quantos processos seletivos faz por mês?</label>
                         <input class="form-control" ng-model="vm.processes" id="input-processes" type="number" min="0">
                     </div>
                 </div>
@@ -304,23 +305,33 @@
             <div class="row">
                 <div class="col-md-6">
 
-                    <p>Porcentagem horas com THT{{ vm.percentageTime }}%</p>
+                    <p>Porcentagem horas com THT{{ vm.percentageTime|number:1 }}%</p>
 
-                    <p>{{vm.hoursPerProcessWithoutTHT}} horas por processo sem THT.</p>
-                    <p>{{vm.hoursPerProcessWithTHT}} horas por processo com THT.</p>
-                    <p>{{vm.hoursSavedPerProcess}} horas economizadas por processo.</p>
+                    <p>{{vm.hoursPerProcessWithoutTHT|number:1}} horas por processo sem THT.</p>
+                    <p>{{vm.hoursPerProcessWithTHT|number:1}} horas por processo com THT.</p>
+                    <p>{{vm.hoursSavedPerProcess|number:1}} horas economizadas por processo.</p>
 
-                    <p>{{vm.hoursSavedPerMonth}} horas economizadas por mês.</p>
+                    <p>{{vm.hoursSavedPerMonth|number:1}} horas economizadas por mês.</p>
 
-                    <p>{{vm.hoursSavedPerYear}} horas economizadas por mês.</p>
+                    <p>{{vm.hoursSavedPerYear|number:1}} horas economizadas por mês.</p>
 
+                    <div>
+                        <strong>Recursos poupados por processo</strong><br>
+                        Além disso, o processo poupa:
+                        <ul>
+                            <li>100% em gastos de viagens, pois todos os processos são realizados pela internet</li>
+                            <li>50% em gastos de locação, por requerer apenas espaços para entrevistas</li>
+                            <li>50% em custos fixos de manutenção (coffee-break, água etc.)</li>
+                            <li>30% de custos de escritório</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="col-md-6">
-                    <p>{{vm.percentageMoney}}%</p>
+                    <p>{{vm.percentageMoney|number:1}}%</p>
 
-                    <p>R${{ vm.moneySavedPerYear}}</p>
+                    <p>R${{ vm.moneySavedPerYear|number:1}} poupados anualmente</p>
 
-                    <p>sdlkjhfskjlhflsdhfkjksdjhf</p>
+                    <p></p>
 
                     <p>sdlkjhfskjlhflsdhfkjksdjhf</p>
 

@@ -40,6 +40,7 @@
       var globalAnalysisTimeWithTHT = 300; //5 minutes
 
 
+      var pricePerTest = 0;
 
       var totalTimeWithoutTHT = 0;
       var totalTimeWithTHT = 0;
@@ -53,10 +54,13 @@
       });
 
       function recalculateValues(){
+
+
+
         var processTimeWithoutTHT =
-          positionsPerMonth * numberOfPublications * publicationTime
-        + positionsPerMonth * CVsPerPosition * revisionTimePerCV
-        + positionsPerMonth * schedulingTime
+          (positionsPerMonth * numberOfPublications * publicationTime)
+        + (positionsPerMonth * CVsPerPosition * revisionTimePerCV)
+        + (positionsPerMonth * schedulingTime)
         + positionsPerMonth * interviewsPerPosition * timePerInterview + testDuration
         + positionsPerMonth * candidatesForInterview * testCorrectionTime + globalAnalysisTimeWithoutTHT;
 
@@ -66,20 +70,22 @@
         + positionsPerMonth * schedulingTime
         + positionsPerMonth * candidatesForInterview + globalAnalysisTimeWithTHT;
 
-
-        vm.percentageTime = (processTimeWithTHT * 100) / processTimeWithoutTHT;
-        var hoursTotalPerMonthWithoutTHT = processTimeWithoutTHT * vm.processes;
-        var hoursTotalPerMonthWithTHT = processTimeWithTHT * vm.processes;
-
         vm.hoursPerProcessWithoutTHT = processTimeWithoutTHT / secondsPerHour;
         vm.hoursPerProcessWithTHT = processTimeWithTHT / secondsPerHour;
+
+        vm.percentageTime = (processTimeWithTHT * 100) / processTimeWithoutTHT;
+
+        var hoursTotalPerMonthWithoutTHT = processTimeWithoutTHT * vm.processes / secondsPerHour;
+        var hoursTotalPerMonthWithTHT = processTimeWithTHT * vm.processes / secondsPerHour;
+
+
 
         vm.hoursSavedPerProcess = (processTimeWithoutTHT - processTimeWithTHT) / secondsPerHour;
         vm.hoursSavedPerMonth = vm.hoursSavedPerProcess * vm.processes;
         vm.hoursSavedPerYear = vm.hoursSavedPerMonth * 12;
 
-        var moneyTotalWithoutTHT = hoursTotalPerMonthWithoutTHT * 12;
-        var moneyTotalWithTHT = hoursTotalPerMonthWithTHT * 12;
+        var moneyTotalWithoutTHT = hoursTotalPerMonthWithoutTHT * valueAnalystPerHour * 12;
+        var moneyTotalWithTHT = hoursTotalPerMonthWithTHT * valueAnalystPerHour * 12;
 
         vm.percentageMoney = (moneyTotalWithTHT * 100) / moneyTotalWithoutTHT;
         vm.moneySavedPerYear = moneyTotalWithoutTHT - moneyTotalWithTHT;

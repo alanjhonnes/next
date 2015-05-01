@@ -348,6 +348,17 @@ section {
   margin-top: 20px;
   text-align: center;
   color: @color-dark;
+  ol { list-style-type: none; }
+  ol li:before
+  {
+    counter-increment: mycounter;
+    content: counter(mycounter) ".\00A0\00A0";
+  }
+  ol li
+  {
+    text-indent: -1.3em;
+  }
+  ol.start { counter-reset: mycounter; }
 }
 
 .solution-item {
