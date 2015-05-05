@@ -1,8 +1,16 @@
 <section class="section-banners">
     <div style="">
         <carousel interval="5000">
-            <slide ng-repeat="slide in vm.slides" active="slide.active">
-                <img ng-src="{{slide.image}}" style="margin:auto;">
+            <slide ng-repeat="slide in vm.slides" active="slide.active" class="slide-container"
+                   style="background-image: url('{{slide.image}}'); height: {{viewportHeight}}px;" >
+                <div class="container">
+                    <div class="slide-content text-shadow row">
+                        <div class="col-lg-8" ng-class="{active: slide.active}">
+                            <h1>{{slide.title}}</h1>
+                            <p>{{slide.content}}</p>
+                        </div>
+                    </div>
+                </div>
             </slide>
         </carousel>
     </div>
@@ -64,7 +72,7 @@
     <a href="#section-calculate" du-smooth-scroll><button class="btn-down-arrow"></button></a>
 </section>
 
-<section class="section-calculate" id="section-calculate">
+<section class="section-calculate" id="section-calculate" style="min-height: {{viewportHeight}}px">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
@@ -331,11 +339,6 @@
 
                     <p>R${{ vm.moneySavedPerYear|number:1}} poupados anualmente</p>
 
-                    <p></p>
-
-                    <p>sdlkjhfskjlhflsdhfkjksdjhf</p>
-
-                    <p>sdlkjhfskjlhflsdhfkjksdjhf</p>
                 </div>
             </div>
         </div>
@@ -348,29 +351,29 @@
         <h1 class="section-title">Clientes</h1>
         <table class="grid-table">
             <tr>
-                <td class="client-icon">
+                <td class="icons-colored-bw client-icon">
                     <img class="icon-colored" src="assets/clients/hirota.jpg" alt=""/>
                     <img class="icon-bw" src="assets/clients/hirota-bw.jpg" alt=""/>
                 </td>
-                <td class="client-icon">
+                <td class="icons-colored-bw client-icon">
                     <img class="icon-colored" src="assets/clients/bayer.jpg" alt=""/>
                     <img class="icon-bw" src="assets/clients/bayer-bw.jpg" alt=""/>
                 </td>
-                <td class="client-icon">
+                <td class="icons-colored-bw client-icon">
                     <img class="icon-colored" src="assets/clients/casino.jpg" alt=""/>
                     <img class="icon-bw" src="assets/clients/casino-bw.jpg" alt=""/>
                 </td>
             </tr>
             <tr>
-                <td class="client-icon">
+                <td class="icons-colored-bw client-icon">
                     <img class="icon-colored" src="assets/clients/kimberly.jpg" alt=""/>
                     <img class="icon-bw" src="assets/clients/kimberly-bw.jpg" alt=""/>
                 </td>
-                <td class="client-icon">
+                <td class="icons-colored-bw client-icon">
                     <img class="icon-colored" src="assets/clients/merck.jpg" alt=""/>
                     <img class="icon-bw" src="assets/clients/merck-bw.jpg" alt=""/>
                 </td>
-                <td class="client-icon">
+                <td class="icons-colored-bw client-icon">
                     <img class="icon-colored" src="assets/clients/telefonica.jpg" alt=""/>
                     <img class="icon-bw" src="assets/clients/telefonica-bw.jpg" alt=""/>
                 </td>

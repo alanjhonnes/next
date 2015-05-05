@@ -203,6 +203,58 @@ section {
   padding-bottom: 0;
 }
 
+.slide-container {
+  width: 100%;
+  min-height: 550px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  &.active {
+    h1 {
+
+    }
+    p {
+
+    }
+  }
+}
+
+.slide-content {
+  position: absolute;
+  color: @color-light;
+  bottom: 50px;
+  text-align: left;
+  h1, p {
+    opacity: 0;
+    transform: translateX(-500px);
+    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s;
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s;
+  }
+  .active {
+    h1, p {
+      opacity: 1;
+      transform: translateX(0px);
+      -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+      transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+    }
+    h1 {
+      -webkit-transition-delay: 0.4s;
+      transition-delay: 0.4s;
+    }
+    p {
+      -webkit-transition-delay: 0.7s;
+      transition-delay: 0.7s;
+    }
+  }
+  h1 {
+    font-size: 60px;
+
+  }
+  p {
+    font-size: 26px;
+  }
+}
+
 .section-services {
   background-color: @color-light-grey;
   padding-bottom: 90px;
@@ -571,32 +623,6 @@ section {
 
 .client-icon {
   width: 33.33%;
-  text-align: center;
-  cursor: pointer;
-  position: relative;
-  &:hover {
-    .icon-colored {
-      opacity: 1;
-    }
-  }
-  img {
-    max-width: 100%;
-    position: relative;
-  }
-  .icon-colored {
-    position: absolute;
-    z-index: 2;
-    opacity: 0;
-    -webkit-transition: opacity 0.3s;
-    -moz-transition: opacity 0.3s;
-    -ms-transition: opacity 0.3s;
-    -o-transition: opacity 0.3s;
-    transition: opacity 0.3s;
-  }
-  .icon-bw {
-    z-index: 1;
-  }
-
 }
 
 .section-contact {
@@ -759,4 +785,174 @@ footer {
   border-width: 1px;
   border-style: solid;
   border-color: #cccccc;
+}
+
+.icons-colored-bw {
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  &:hover {
+    .icon-colored {
+      opacity: 1;
+    }
+  }
+  img {
+    max-width: 100%;
+    position: relative;
+  }
+  .icon-colored {
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    -ms-transition: opacity 0.3s;
+    -o-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+  .icon-bw {
+    z-index: 1;
+  }
+}
+
+.section-who-we-are-banner {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../assets/images/banner-who-we-are.jpg');
+  min-height: 500px;
+}
+
+.section-differentials {
+  text-align: center;
+  background-color: @color-light-grey;
+}
+
+.differentials-blocks {
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  margin-bottom: 30px;
+}
+
+.check-list {
+  li {
+
+  }
+}
+
+.section-our-team {
+  .section-title {
+    margin-bottom: 50px;
+  }
+  .member-name {
+    font-weight: bold;
+  }
+}
+
+.section-tht-banner {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../assets/images/banner-tht.jpg');
+  min-height: 500px;
+}
+
+.section-tht {
+  font-size: 18px;
+  color: @color-dark;
+}
+
+.tht-map {
+  svg {
+    position: relative;
+    top: -80px;
+    width: 100%;
+    height: auto;
+  }
+  [id$=item] { /* Any element with an id that ends in "item" */
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    [id$=tooltip] {
+      position: relative;
+      opacity: 0;
+      display: none;
+      transform: translateY(-80px);
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      -ms-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+    &:hover {
+      [id$=tooltip] {
+        display: block;
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+  }
+}
+
+ul, ol {
+  padding-left: 0;
+  li {
+    list-style-position: inside;
+  }
+}
+
+.disc-item {
+
+}
+
+.disc-item-red {
+
+}
+
+.disc-item-yellow {
+
+}
+
+.disc-item-blue {
+
+}
+
+.disc-item-green {
+
+}
+
+.red {
+  color: @color-red;
+}
+.yellow {
+  color: @color-yellow;
+}
+
+.blue {
+  color: @color-light-blue;
+}
+.green {
+  color: @color-green;
+}
+
+.section-what-is-it-for {
+  .check-list {
+
+  }
+}
+
+.section-free-test-form {
+  label {
+    text-align: right;
+    line-height: 32px;
+  }
+  .submit-container {
+    text-align: center;
+  }
 }

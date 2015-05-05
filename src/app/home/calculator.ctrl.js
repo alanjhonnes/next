@@ -54,9 +54,6 @@
       });
 
       function recalculateValues(){
-
-
-
         var processTimeWithoutTHT =
           (positionsPerMonth * numberOfPublications * publicationTime)
         + (positionsPerMonth * CVsPerPosition * revisionTimePerCV)
