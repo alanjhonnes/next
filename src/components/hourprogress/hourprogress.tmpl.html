@@ -1,0 +1,19 @@
+<div class="radial-progress hour-progress" data-progress="{{vm.progress}}">
+    <div class="circle">
+        <div class="mask full">
+            <div class="fill"></div>
+        </div>
+        <div class="mask half">
+            <div class="fill"></div>
+            <div class="fill fix"></div>
+        </div>
+        <div class="shadow"></div>
+    </div>
+    <div class="inset">
+        <div class="percentage hour-percentage-text">
+            <strong>
+                {{vm.hours|number:1}}<br><span>horas</span>
+            </strong>
+        </div>
+    </div>
+</div>

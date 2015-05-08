@@ -2,5 +2,6 @@
 
 angular.module('nextgroup')
   .controller('NavbarCtrl', function ($scope) {
-    $scope.date = new Date();
+    var vm = this;
+    vm.isCollapsed = true;
   });

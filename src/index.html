@@ -3,9 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>NextGroup</title>
-    <meta name="description" content="">
+      <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+      <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <!-- <base href="/"> -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+    <!--<base href="/">-->
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
@@ -22,12 +25,16 @@
     <!-- endbuild -->
   </head>
   <body ng-controller="AppCtrl">
-    <div ui-view="nav"></div>
+  <a ng-show="showHelp" class="help-popup" ui-sref="home({section:'section-contact'})">
 
-    <div ui-view="content"></div>
-
-    <div ui-view="footer"></div>
-
+  </a>
+  <div ng-controller="NavbarCtrl as vm">
+      <div ng-include="'components/navbar/navbar.html'" src="components/navbar/navbar.html"></ng-include>
+  </div>
+    <div ui-view="content" autoscroll="true"></div>
+  <div ng-controller="FooterCtrl as vm">
+      <ng-include src="'components/footer/footer.html'"></ng-include>
+  </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-static-top" headroom>
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse" ng-click="isCollapsed = !isCollapsed">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse" ng-click="vm.isCollapsed = !vm.isCollapsed">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -7,19 +7,18 @@
     </button>
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" ui-sref="home">
+      <a class="navbar-brand" href="#/" ng-click="vm.isCollapsed = true">
         <span class="logo-next-group"></span>
       </a>
     </div>
 
-    <div class="collapse navbar-collapse navbar-right" id="navbar-collapse">
+    <div class="collapse navbar-collapse navbar-right" id="navbar-collapse" collapse="vm.isCollapsed">
       <ul class="nav navbar-nav">
-        <li><a ui-sref="home.free-test" class="btn-try-for-free">Teste Gratis</a></li>
-          <li><a href="#section-solutions" du-smooth-scroll>Soluções</a></li>
-        <li><a ui-sref="home.who-we-are" >Quem Somos</a></li>
-        <li><a ui-sref="home.about-tht">Sobre THT</a></li>
-        <li><a href="#section-contact" du-smooth-scroll du-scrollspy="#section-contact">Contato</a></li>
-        <li><a class="login-link" href="#">Log in</a></li>
+        <li><a ui-sref="free-test" ui-sref-active="active" class="btn-try-for-free" ng-click="vm.isCollapsed = true">Teste Gratis</a></li>
+          <li><a ui-sref="home({section:'section-solutions'})" du-scrollspy="section-solutions"  ng-click="vm.isCollapsed = true">Soluções</a></li>
+        <li><a ui-sref="who-we-are" ui-sref-active="active" ng-click="vm.isCollapsed = true">Quem Somos</a></li>
+        <li><a ui-sref="about-tht" ui-sref-active="active" ng-click="vm.isCollapsed = true">Sobre THT</a></li>
+        <li><a class="login-link" href="http://plataformatht.com/tht/" ng-click="vm.isCollapsed = true">Log in</a></li>
       </ul>
     </div>
   </div>

@@ -1,8 +1,8 @@
 <section class="section-banners">
     <div style="">
-        <carousel interval="5000">
+        <carousel interval="7000" no-pause="true">
             <slide ng-repeat="slide in vm.slides" active="slide.active" class="slide-container"
-                   style="background-image: url('{{slide.image}}'); height: {{viewportHeight}}px;" >
+                   ng-style="{ 'background-image': 'url(' + slide.image + ')', 'height': viewportHeight + 'px'}" >
                 <div class="container">
                     <div class="slide-content text-shadow row">
                         <div class="col-lg-8" ng-class="{active: slide.active}">
@@ -26,8 +26,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4">
-                <div class="service-item">
+            <div class="col-lg-4 col-sm-8 col-sm-push-2 col-lg-push-0">
+                <div class="service-item service-item-simple" ani-view offset-top="100" offset-left="0">
                     <div class="service-icon service-icon-simple"></div>
                     <p class="service-title">
                         Simples
@@ -40,8 +40,8 @@
                 </div>
             </div>
 
-            <div class="col-lg-4">
-                <div class="service-item">
+            <div class="col-lg-4 col-sm-8 col-sm-push-2 col-lg-push-0">
+                <ani-view class="service-item service-item-integrated"  offset-top="200" offset-left="0">
                     <div class="service-icon service-icon-integrated"></div>
                     <p class="service-title">
                         Integrada
@@ -51,11 +51,11 @@
                         equipes e organizações numa só plataforma. São 33 tipos de testes DISC e indicadores para 14
                         competências.
                     </p>
-                </div>
+                </ani-view>
             </div>
 
-            <div class="col-lg-4">
-                <div class="service-item">
+            <div class="col-lg-4 col-sm-8 col-sm-push-2 col-lg-push-0">
+                <div class="service-item service-item-unlimited" ani-view offset-top="300" offset-left="0">
                     <div class="service-icon service-icon-unlimited"></div>
                     <p class="service-title">
                         Ilimitada
@@ -72,7 +72,7 @@
     <a href="#section-calculate" du-smooth-scroll><button class="btn-down-arrow"></button></a>
 </section>
 
-<section class="section-calculate" id="section-calculate" style="min-height: {{viewportHeight}}px">
+<section class="section-calculate" id="section-calculate" ng-style="{'min-height': viewportHeight+'px'}"  parallax-background parallax-ratio="0.1">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
@@ -108,9 +108,8 @@
         </div>
         <div class="row">
             <div class="col-md-6 col-lg-4">
-                <div class="solution-item" ng-click="vm.toggleSolution('recruitment')"
-                     popover-html-unsafe="{{ vm.recruitment }}" popover-placement="bottom"
-                     ng-class="{active: vm.activeSolution === 'recruitment'}" popover-toggle="vm.activeSolution === 'recruitment'">
+                <div class="solution-item"
+                     tooltip-html-unsafe="{{ vm.recruitment }}" tooltip-placement="bottom">
                     <div class="solution-icon solution-icon-recruitment"></div>
                     <h4 class="solution-title">Recrutamento</h4>
                     <p class="solution-content">
@@ -120,9 +119,8 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-4">
-                <div class="solution-item" ng-click="vm.toggleSolution('position')"
-                     popover-html-unsafe="{{ vm.position }}" popover-placement="bottom"
-                     ng-class="{active: vm.activeSolution === 'position'}" popover-toggle="vm.activeSolution === 'position'">
+                <div class="solution-item"
+                     tooltip-html-unsafe="{{ vm.position }}" tooltip-placement="bottom">
                     <div class="solution-icon solution-icon-position"></div>
                     <h4 class="solution-title">Cargo</h4>
                     <p class="solution-content">
@@ -132,9 +130,8 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-4">
-                <div class="solution-item" ng-click="vm.toggleSolution('development')"
-                     popover-html-unsafe="{{ vm.development }}" popover-placement="bottom"
-                        ng-class="{active: vm.activeSolution === 'development'}" popover-toggle="vm.activeSolution === 'development'">
+                <div class="solution-item"
+                     tooltip-html-unsafe="{{ vm.development }}" tooltip-placement="bottom">
                     <div class="solution-icon solution-icon-development"></div>
                     <h4 class="solution-title">Desenvolvimento</h4>
                     <p class="solution-content">
@@ -144,9 +141,8 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-4">
-                <div class="solution-item" ng-click="vm.toggleSolution('organization')"
-                     popover-html-unsafe="{{ vm.organization }}" popover-placement="bottom"
-                     ng-class="{active: vm.activeSolution === 'organization'}" popover-toggle="vm.activeSolution === 'organization'">
+                <div class="solution-item"
+                     tooltip-html-unsafe="{{ vm.organization }}" tooltip-placement="bottom">
                     <div class="solution-icon solution-icon-organization"></div>
                     <h4 class="solution-title">Organização</h4>
                     <p class="solution-content">
@@ -157,9 +153,8 @@
             </div>
 
             <div class="col-md-6 col-lg-4">
-                <div class="solution-item" ng-click="vm.toggleSolution('team')"
-                     popover-html-unsafe="{{ vm.team }}" popover-placement="bottom"
-                     ng-class="{active: vm.activeSolution === 'team'}" popover-toggle="vm.activeSolution === 'team'">
+                <div class="solution-item"
+                     tooltip-html-unsafe="{{ vm.team }}" tooltip-placement="bottom">
                     <div class="solution-icon solution-icon-team"></div>
                     <h4 class="solution-title">Equipe</h4>
                     <p class="solution-content">
@@ -170,9 +165,8 @@
             </div>
 
             <div class="col-md-6 col-lg-4">
-                <div class="solution-item" ng-click="vm.toggleSolution('feedback')"
-                     popover-html-unsafe="{{ vm.feedback }}" popover-placement="bottom"
-                     ng-class="{active: vm.activeSolution === 'feedback'}" popover-toggle="vm.activeSolution === 'feedback'">
+                <div class="solution-item"
+                     tooltip-html-unsafe="{{ vm.feedback }}" tooltip-placement="bottom">
                     <div class="solution-icon solution-icon-feedback"></div>
                     <h4 class="solution-title">Alinhamento</h4>
                     <p class="solution-content">
@@ -282,7 +276,7 @@
 </section>
 
 
-<section class="section-calculator" id="section-calculator" ng-controller="CalculatorCtrl as vm">
+<section class="section-calculator" id="section-calculator" ng-controller="CalculatorCtrl as vm" >
     <div class="calculator-background">
         <div class="container">
             <div class="row">
@@ -302,43 +296,68 @@
                     </div>
                     <div class="form-horizontal form-group">
                         <label for="input-processes">Quantos processos seletivos faz por mês?</label>
-                        <input class="form-control" ng-model="vm.processes" id="input-processes" type="number" min="0">
+                        <input class="form-control" ng-model="vm.processes" id="input-processes" type="number" min="1">
                     </div>
+                    <p class="section-subtitle">
+                        *Valores aproximados
+                    </p>
                 </div>
             </div>
         </div>
     </div>
-    <div ng-show="vm.employees > 0 && vm.processes > 0">
+    <div collapse="!vm.showResults">
         <div class="container">
-            <div class="row">
+            <h3 ng-show="vm.showWarningMessage">
+                Para melhor atendê-lo e fazermos uma proposta adequada a suas necessidades, por favor, entre em contato conosco
+            </h3>
+            <div class="row"  ng-show="!vm.showWarningMessage">
                 <div class="col-md-6">
 
-                    <p>Porcentagem horas com THT{{ vm.percentageTime|number:1 }}%</p>
-
+                    <table class="calculator-table">
+                        <tr>
+                            <td>
+                                <percentage-progress ratio="vm.percentageMoney"></percentage-progress>
+                            </td>
+                            <td>
+                                <strong>Recursos poupados por processo</strong>
+                                <p><strong>R${{ vm.moneySavedPerYear|number:1}}</strong> poupados anualmente em processos.</p>
+                                <p>
+                                    Além disso, o processo poupa:
+                                </p>
+                                <ul>
+                                    <li>100% em gastos de viagens, pois todos os processos são realizados pela internet</li>
+                                    <li>50% em gastos de locação, por requerer apenas espaços para entrevistas</li>
+                                    <li>50% em custos fixos de manutenção (coffee-break, água etc.)</li>
+                                    <li>30% de custos de escritório</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                    <!--
+                    <p>Porcentagem horas com THT {{ vm.percentageTime|number:1 }}%</p>
                     <p>{{vm.hoursPerProcessWithoutTHT|number:1}} horas por processo sem THT.</p>
                     <p>{{vm.hoursPerProcessWithTHT|number:1}} horas por processo com THT.</p>
                     <p>{{vm.hoursSavedPerProcess|number:1}} horas economizadas por processo.</p>
 
                     <p>{{vm.hoursSavedPerMonth|number:1}} horas economizadas por mês.</p>
 
-                    <p>{{vm.hoursSavedPerYear|number:1}} horas economizadas por mês.</p>
-
-                    <div>
-                        <strong>Recursos poupados por processo</strong><br>
-                        Além disso, o processo poupa:
-                        <ul>
-                            <li>100% em gastos de viagens, pois todos os processos são realizados pela internet</li>
-                            <li>50% em gastos de locação, por requerer apenas espaços para entrevistas</li>
-                            <li>50% em custos fixos de manutenção (coffee-break, água etc.)</li>
-                            <li>30% de custos de escritório</li>
-                        </ul>
-                    </div>
+                    <p>{{vm.hoursSavedPerYear|number:1}} horas economizadas por ano.</p>
+                    -->
                 </div>
                 <div class="col-md-6">
-                    <p>{{vm.percentageMoney|number:1}}%</p>
-
-                    <p>R${{ vm.moneySavedPerYear|number:1}} poupados anualmente</p>
-
+                    <table class="calculator-table">
+                        <tr>
+                            <td>
+                                <hour-progress hours="vm.hoursSavedPerProcess"></hour-progress>
+                            </td>
+                            <td>
+                                <strong>Tempo poupado por processo</strong>
+                                <p>
+                                    Este tempo pode ser usado em capacitação de pessoal, melhores entrevistas e atividades de engajamento e produtividade.
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
@@ -388,8 +407,10 @@
         <div class="row">
             <div class="col-xs-12">
                 <h1 class="section-title">Contato</h1>
-                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d914.2125268003132!2d-46.68889299570092!3d-23.573826337748624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce577320554901%3A0x12f9dd69da08c0f6!2sAv.+Brg.+Faria+Lima%2C+1893+-+Jardim+Paulistano%2C+S%C3%A3o+Paulo+-+SP%2C+01452-001!5e0!3m2!1sen!2sbr!4v1429906931596"
-                         ></iframe>
+                <div mouse-activatable>
+                    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d914.2125268003132!2d-46.68889299570092!3d-23.573826337748624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce577320554901%3A0x12f9dd69da08c0f6!2sAv.+Brg.+Faria+Lima%2C+1893+-+Jardim+Paulistano%2C+S%C3%A3o+Paulo+-+SP%2C+01452-001!5e0!3m2!1sen!2sbr!4v1429906931596"
+                            ></iframe>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -411,7 +432,7 @@
                 </p>
             </div>
             <div class="col-md-6 col-md-push-1" ng-controller="ContactCtrl as vm">
-                <form action="" method="POST" class="" role="form">
+                <form ng-submit="vm.submit(contactform)" name="contactform" method="POST" role="form">
                     <div class="form-group">
                         <label for="input-name">Nome:</label>
                         <input id="input-name" class="form-control" required ng-model="vm.name" type="text">
@@ -431,9 +452,9 @@
                         <label for="input-message">Mensagem:</label>
                         <textarea id="input-message" class="form-control" required ng-model="vm.message"></textarea>
                     </div>
-                
+                    <div class="alert" ng-class="vm.result" ng-show="vm.submitted" role="alert">{{ vm.resultMessage }}</div>
                     <div class="submit-container">
-                        <button type="submit" class="contact-btn">Enviar</button>
+                        <button type="submit" ng-disabled="vm.submitButtonDisabled" class="contact-btn">Enviar</button>
                     </div>
                 </form>
             </div>

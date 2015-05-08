@@ -1,34 +1,22 @@
 'use strict';
 
-angular.module('nextgroup', ['ngAnimate', 'ngTouch', 'ui.router', 'ui.bootstrap', 'duScroll', 'headroom'])
+angular.module('nextgroup', ['ngAnimate', 'ngTouch', 'ui.router', 'ui.bootstrap', 'duScroll',
+  'headroom', 'angular-parallax'])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
     //$locationProvider.html5Mode(true);
     $stateProvider
-      .state('test', {
-        url: '/test',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
-      })
       .state('home', {
-        url: '',
+        url: '/:section',
         views: {
-          nav: {
-            templateUrl: 'components/navbar/navbar.html',
-            controller: 'NavbarCtrl as vm'
-          },
           content: {
             templateUrl: 'app/home/home.html',
             controller: 'HomeCtrl as vm'
-          },
-          footer: {
-            templateUrl: 'components/footer/footer.html',
-            controller: 'FooterCtrl as vm'
           }
         }
       })
-      .state('home.who-we-are', {
-        url: '/quem-somos',
+      .state('who-we-are', {
+        url: '/quem-somos/:section',
         views: {
           'content@': {
             templateUrl: 'app/who-we-are/who-we-are.html',
@@ -36,8 +24,8 @@ angular.module('nextgroup', ['ngAnimate', 'ngTouch', 'ui.router', 'ui.bootstrap'
           }
         }
       })
-      .state('home.about-tht', {
-        url: '/sobre-tht',
+      .state('about-tht', {
+        url: '/sobre-tht/:section',
         views: {
           'content@': {
             templateUrl: 'app/about-tht/about-tht.html',
@@ -45,8 +33,8 @@ angular.module('nextgroup', ['ngAnimate', 'ngTouch', 'ui.router', 'ui.bootstrap'
           }
         }
       })
-      .state('home.free-test', {
-        url: '/teste-gratis',
+      .state('free-test', {
+        url: '/teste-gratis/:section',
         views: {
           'content@': {
             templateUrl: 'app/free-test/free-test.html',
@@ -56,9 +44,23 @@ angular.module('nextgroup', ['ngAnimate', 'ngTouch', 'ui.router', 'ui.bootstrap'
       })
     ;
 
-    $urlRouterProvider.otherwise('');
+    $urlRouterProvider.otherwise('/');
   })
-  .run(function($rootScope){
-    $rootScope.$on("$stateChangeError", console.log.bind(console));
+  .run(function($rootScope, $document){
+
   })
+  .filter('numberFixedLen', function () {
+    return function (n, len) {
+      var num = parseInt(n, 10);
+      len = parseInt(len, 10);
+      if (isNaN(num) || isNaN(len)) {
+        return n;
+      }
+      num = ''+num;
+      while (num.length < len) {
+        num = '0'+num;
+      }
+      return num;
+    };
+  });
 ;
