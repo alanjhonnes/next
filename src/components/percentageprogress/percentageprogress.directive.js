@@ -19,6 +19,7 @@
       vm.progress = 0;
       $scope.$watch('vm.ratio', function(ratio){
         vm.progress = Math.round(ratio);
+        vm.circleProgress = Math.min(vm.progress, 100);
       });
     }])
   ;

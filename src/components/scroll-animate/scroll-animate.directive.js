@@ -82,30 +82,33 @@ angular.module('nextgroup')
             template: '<div ng-transclude ng-show=\'show\'></div>',
             scope: {
                 show: '@',
+                onlyOnce: '@',
                 offsetTop: '=',
                 offsetLeft: '='
             },
             link:  function(scope, element, attrs){
-                angular.element($window).bind('scroll', function() {
 
-                  var position = scope.getPosition(element);
-                  var offset = scope.getScrollOffsets($window);
-                  var viewport = scope.getViewPortSize($window);
-                  var coverage = {
-                    x: parseInt(viewport.x + offset.x),
-                    y: parseInt(viewport.y + offset.y)
-                  };
-                  console.log('c:', coverage);
-                  console.log('p:',position);
-                  console.log('offtop:',scope.offsetTop);
-                  if (coverage.y >= (position.y + scope.offsetTop) && coverage.x >= (position.x + scope.offsetLeft)) {
-                    scope.show = true;
-                  } else {
-                    scope.show = false;
+              var onWindowScroll = function(){
+                var position = scope.getPosition(element);
+                var offset = scope.getScrollOffsets($window);
+                var viewport = scope.getViewPortSize($window);
+                var coverage = {
+                  x: parseInt(viewport.x + offset.x),
+                  y: parseInt(viewport.y + offset.y)
+                };
+                if (coverage.y >= (position.y + scope.offsetTop) && coverage.x >= (position.x + scope.offsetLeft)) {
+                  scope.show = true;
+                  if(scope.onlyOnce){
+                    console.log('only once')
+                    angular.element($window).off('scroll', onWindowScroll);
                   }
-                  console.log(scope.show);
-                  scope.$apply();
-                });
+                } else {
+                  scope.show = false;
+                }
+                scope.$apply();
+              };
+
+                angular.element($window).bind('scroll', onWindowScroll);
               }
 
         };

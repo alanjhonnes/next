@@ -16,6 +16,15 @@
     </div>
     <!--<a href="#section-services" du-smooth-scroll><button class="btn-down-arrow"></button></a>-->
 </section>
+<!--<section id="video-wrap">-->
+    <!--<video autoplay="" loop="" poster="assets/vids/bg-poster.jpg">-->
+        <!--<source src="assets/vids/bg.mp4" type="video/mp4" >-->
+    <!--</video>-->
+    <!--<div class="video-overlay"></div>-->
+    <!--<div class="video-wrap-content text-center">-->
+        <!--Text-->
+    <!--</div>-->
+<!--</section>-->
 <section class="section-services" id="section-services">
     <div class="container">
         <div class="row">
@@ -290,10 +299,12 @@
                     <p class="section-info">
                         Calcule o que você vai poupar em tempo e dinheiro, além do grande impacto no ambiente e na performance da sua empresa.
                     </p>
+                    <!--
                     <div class="form-horizontal form-group">
                         <label for="input-employees">Quantos colaboradores a empresa possui?</label>
                         <input class="form-control" ng-model="vm.employees" id="input-employees" type="number" min="0">
                     </div>
+                    -->
                     <div class="form-horizontal form-group">
                         <label for="input-processes">Quantos processos seletivos faz por mês?</label>
                         <input class="form-control" ng-model="vm.processes" id="input-processes" type="number" min="1">
@@ -308,43 +319,48 @@
     <div collapse="!vm.showResults">
         <div class="container">
             <h3 ng-show="vm.showWarningMessage">
-                Para melhor atendê-lo e fazermos uma proposta adequada a suas necessidades, por favor, entre em contato conosco
+                Para melhor atendê-lo e fazermos uma proposta adequada a suas necessidades, por favor, entre em contato conosco.
             </h3>
-            <div class="row"  ng-show="!vm.showWarningMessage">
-                <div class="col-md-6">
-
+            <h3 ng-show="vm.discountPercentage < 0">Pelo volume de testes que você precisa, aconselhamos a compra de nossos testes avulsos.</h3>
+            <div class="row" ng-show="(!vm.showWarningMessage || vm.discountPercentage >= 0)">
+                <div class="col-md-4">
                     <table class="calculator-table">
                         <tr>
                             <td>
-                                <percentage-progress ratio="vm.percentageMoney"></percentage-progress>
+                                <percentage-progress ratio="vm.unlimitedPricePercentage"></percentage-progress>
+                            </td>
+                            <td>
+                                <strong>Custo de um pacote de testes ilimitados em relação aos custos avulsos</strong>
+                                <p ng-show="vm.discountPercentage >= 1"><strong>{{vm.discountPercentage}}%</strong> de desconto relativo à compra de testes avulsos</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-md-4">
+                    <table class="calculator-table">
+                        <tr>
+                            <td>
+                                <percentage-progress class="circle-green" ratio="vm.percentageSavedPerProcess"></percentage-progress>
                             </td>
                             <td>
                                 <strong>Recursos poupados por processo</strong>
-                                <p><strong>R${{ vm.moneySavedPerYear|number:1}}</strong> poupados anualmente em processos.</p>
-                                <p>
-                                    Além disso, o processo poupa:
-                                </p>
+                                <!--
+                                <p ng-show="vm.discountPercentage >= 1"><strong>{{vm.discountPercentage}}%</strong> de desconto relativo à compra de testes avulsos</p>
+                                <p><strong>{{vm.percentageSavedPerProcess|number:0}}%</strong> de recursos humanos poupados por processo</p>
+
                                 <ul>
                                     <li>100% em gastos de viagens, pois todos os processos são realizados pela internet</li>
                                     <li>50% em gastos de locação, por requerer apenas espaços para entrevistas</li>
                                     <li>50% em custos fixos de manutenção (coffee-break, água etc.)</li>
                                     <li>30% de custos de escritório</li>
-                                </ul>
+                                </ul>-->
+                                <br>
+                                <p>Além de gastos com viagens, locação, custos de manutenção e de escritório.</p>
                             </td>
                         </tr>
                     </table>
-                    <!--
-                    <p>Porcentagem horas com THT {{ vm.percentageTime|number:1 }}%</p>
-                    <p>{{vm.hoursPerProcessWithoutTHT|number:1}} horas por processo sem THT.</p>
-                    <p>{{vm.hoursPerProcessWithTHT|number:1}} horas por processo com THT.</p>
-                    <p>{{vm.hoursSavedPerProcess|number:1}} horas economizadas por processo.</p>
-
-                    <p>{{vm.hoursSavedPerMonth|number:1}} horas economizadas por mês.</p>
-
-                    <p>{{vm.hoursSavedPerYear|number:1}} horas economizadas por ano.</p>
-                    -->
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <table class="calculator-table">
                         <tr>
                             <td>
@@ -353,7 +369,8 @@
                             <td>
                                 <strong>Tempo poupado por processo</strong>
                                 <p>
-                                    Este tempo pode ser usado em capacitação de pessoal, melhores entrevistas e atividades de engajamento e produtividade.
+                                    Este tempo pode ser usado em capacitação de pessoal, melhores entrevistas e
+                                    atividades de engajamento e produtividade.
                                 </p>
                             </td>
                         </tr>
@@ -371,30 +388,44 @@
         <table class="grid-table">
             <tr>
                 <td class="icons-colored-bw client-icon">
-                    <img class="icon-colored" src="assets/clients/hirota.jpg" alt=""/>
-                    <img class="icon-bw" src="assets/clients/hirota-bw.jpg" alt=""/>
+                    <img class="icon-colored" src="assets/clients/condor.png" alt=""/>
+                    <img class="icon-bw" src="assets/clients/condor-bw.png" alt=""/>
                 </td>
                 <td class="icons-colored-bw client-icon">
-                    <img class="icon-colored" src="assets/clients/bayer.jpg" alt=""/>
-                    <img class="icon-bw" src="assets/clients/bayer-bw.jpg" alt=""/>
+                    <img class="icon-colored" src="assets/clients/cvc.png" alt=""/>
+                    <img class="icon-bw" src="assets/clients/cvc-bw.png" alt=""/>
                 </td>
                 <td class="icons-colored-bw client-icon">
-                    <img class="icon-colored" src="assets/clients/casino.jpg" alt=""/>
-                    <img class="icon-bw" src="assets/clients/casino-bw.jpg" alt=""/>
+                    <img class="icon-colored" src="assets/clients/gomes.png" alt=""/>
+                    <img class="icon-bw" src="assets/clients/gomes-bw.png" alt=""/>
                 </td>
             </tr>
             <tr>
                 <td class="icons-colored-bw client-icon">
-                    <img class="icon-colored" src="assets/clients/kimberly.jpg" alt=""/>
-                    <img class="icon-bw" src="assets/clients/kimberly-bw.jpg" alt=""/>
+                    <img class="icon-colored" src="assets/clients/hirota.png" alt=""/>
+                    <img class="icon-bw" src="assets/clients/hirota-bw.png" alt=""/>
                 </td>
                 <td class="icons-colored-bw client-icon">
-                    <img class="icon-colored" src="assets/clients/merck.jpg" alt=""/>
-                    <img class="icon-bw" src="assets/clients/merck-bw.jpg" alt=""/>
+                    <img class="icon-colored" src="assets/clients/marba.png" alt=""/>
+                    <img class="icon-bw" src="assets/clients/marba-bw.png" alt=""/>
                 </td>
                 <td class="icons-colored-bw client-icon">
-                    <img class="icon-colored" src="assets/clients/telefonica.jpg" alt=""/>
-                    <img class="icon-bw" src="assets/clients/telefonica-bw.jpg" alt=""/>
+                    <img class="icon-colored" src="assets/clients/mcassab.png" alt=""/>
+                    <img class="icon-bw" src="assets/clients/mcassab-bw.png" alt=""/>
+                </td>
+            </tr>
+            <tr>
+                <td class="icons-colored-bw client-icon">
+                    <img class="icon-colored" src="assets/clients/rb.png" alt=""/>
+                    <img class="icon-bw" src="assets/clients/rb-bw.png" alt=""/>
+                </td>
+                <td class="icons-colored-bw client-icon">
+                    <img class="icon-colored" src="assets/clients/spt.png" alt=""/>
+                    <img class="icon-bw" src="assets/clients/spt-bw.png" alt=""/>
+                </td>
+                <td class="icons-colored-bw client-icon">
+                    <img class="icon-colored" src="assets/clients/synchro.png" alt=""/>
+                    <img class="icon-bw" src="assets/clients/synchro-bw.png" alt=""/>
                 </td>
             </tr>
         </table>
