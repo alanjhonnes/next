@@ -1,37 +1,47 @@
-<section class="section-banners">
-    <div style="">
-        <carousel interval="7000" no-pause="true">
-            <slide ng-repeat="slide in vm.slides" active="slide.active" class="slide-container"
-                   ng-style="{ 'background-image': 'url(' + slide.image + ')', 'height': viewportHeight + 'px'}" >
-                <div class="container">
-                    <div class="slide-content text-shadow row">
-                        <div class="col-lg-8" ng-class="{active: slide.active}">
-                            <h1>{{slide.title}}</h1>
-                            <p>{{slide.content}}</p>
-                        </div>
-                    </div>
-                </div>
-            </slide>
-        </carousel>
-    </div>
-    <!--<a href="#section-services" du-smooth-scroll><button class="btn-down-arrow"></button></a>-->
-</section>
-<!--<section id="video-wrap">-->
-    <!--<video autoplay="" loop="" poster="assets/vids/bg-poster.jpg">-->
-        <!--<source src="assets/vids/bg.mp4" type="video/mp4" >-->
-    <!--</video>-->
-    <!--<div class="video-overlay"></div>-->
-    <!--<div class="video-wrap-content text-center">-->
-        <!--Text-->
-    <!--</div>-->
+<!--<section class="section-banners">-->
+<!--<div style="">-->
+<!--<carousel interval="7000" no-pause="true">-->
+<!--<slide ng-repeat="slide in vm.slides" active="slide.active" class="slide-container"-->
+<!--ng-style="{ 'background-image': 'url(' + slide.image + ')', 'height': viewportHeight + 'px'}" >-->
+<!--<div class="container">-->
+<!--<div class="slide-content text-shadow row">-->
+<!--<div class="col-lg-8" ng-class="{active: slide.active}">-->
+<!--<h1>{{slide.title}}</h1>-->
+<!--<p>{{slide.content}}</p>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</slide>-->
+<!--</carousel>-->
+<!--</div>-->
+<!--&lt;!&ndash;<a href="#section-services" du-smooth-scroll><button class="btn-down-arrow"></button></a>&ndash;&gt;-->
 <!--</section>-->
+<section id="video-wrap">
+    <video autoplay="" loop="" poster="assets/vids/poster.jpg">
+        <source src="assets/vids/bg.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+    <div class="container video-wrap-content" >
+        <div class="text-shadow row">
+            <div class="col-lg-8">
+                <p>
+                    Qual é o segredo para incrementar as vendas, ter uma equipe comprometida e um ótimo atendimento?
+                    Uma metodologia eficaz para engajar e otimizar o potencial de seus colaboradores.
+                </p>
+                <h1>Venha a conhecer o futuro de RH.</h1>
+            </div>
+        </div>
+    </div>
+</section>
 <section class="section-services" id="section-services">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
                 <h1 class="section-title">O que fazemos</h1>
-                <p class="section-info">A Next Group oferece uma plataforma de testes online
-                    para todas as suas necessidades em RH.</p>
+                <p class="section-info">
+                    A Next Group oferece uma metodologia nova e uma plataforma de testes online
+                    para todas as suas necessidades de RH.
+                </p>
             </div>
         </div>
         <div class="row">
@@ -50,7 +60,7 @@
             </div>
 
             <div class="col-lg-4 col-sm-8 col-sm-push-2 col-lg-push-0">
-                <ani-view class="service-item service-item-integrated"  offset-top="200" offset-left="0">
+                <ani-view class="service-item service-item-integrated" offset-top="200" offset-left="0">
                     <div class="service-icon service-icon-integrated"></div>
                     <p class="service-title">
                         Integrada
@@ -70,38 +80,47 @@
                         Ilimitada
                     </p>
                     <p class="service-content">
-                        Nossos testes são desenvolvidos para você economizar tempo e dinheiro. Com os pacotes ilimitados,
-                        você pode melhorar todos os processos internos da sua organização. Temos um preço para cada
-                        tamanho de empresa.
+                        Pare de se preocupar com o preço dos testes individuais.
+                        Nossos testes são desenvolvidos para você economizar tempo e dinheiro. Com os pacotes
+                        ilimitados, você pode melhorar todos os processos internos da sua organização.
+                        Temos um preço para cada tamanho de empresa.
                     </p>
                 </div>
             </div>
         </div>
     </div>
-    <a href="#section-calculate" du-smooth-scroll><button class="btn-down-arrow"></button></a>
+    <a href="#section-calculate" du-smooth-scroll>
+        <button class="btn-down-arrow"></button>
+    </a>
 </section>
 
-<section class="section-calculate" id="section-calculate" ng-style="{'min-height': viewportHeight+'px'}"  parallax-background parallax-ratio="0.1">
+<section class="section-calculate" id="section-calculate" ng-style="{'min-height': viewportHeight+'px'}"
+         parallax-background parallax-ratio="0.1">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
                 <h1 class="calculate-title text-shadow">
-                    Pare de se preocupar com os preços de testes individuais.
+                    Teste DISC ilimitados
                 </h1>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-6">
                 <p class="text-shadow">
-                    Com os pacotes ilimitados da Next Group, você pode usar os testes não somente para seleção, mas também
+                    Pare de se preocupar com o preço dos testes individuais. Com os pacotes ilimitados da Next Group,
+                    você pode usar os testes não somente para seleção, mas também
                     para aprimorar todos os processos da sua empresa. Economize tempo e dinheiro, melhore o ambiente de
                     trabalho em sua organização e aumente os níveis de engajamento e produtividade de sua equipe.
                 </p>
-                <a href="#section-calculator" du-smooth-scroll><button class="btn-calculate-roi">Calcule o ROI</button></a>
+                <a href="#section-calculator" du-smooth-scroll>
+                    <button class="btn-calculate-roi">Calcule o ROI</button>
+                </a>
             </div>
         </div>
     </div>
-    <a href="#section-solutions" du-smooth-scroll><button class="btn-down-arrow"></button></a>
+    <a href="#section-solutions" du-smooth-scroll>
+        <button class="btn-down-arrow"></button>
+    </a>
 </section>
 
 <section class="section-solutions" id="section-solutions" ng-controller="SolutionsCtrl as vm">
@@ -111,7 +130,7 @@
                 <h1 class="section-title">Soluções</h1>
                 <p class="section-info">
                     Com a plataforma THT - The Talent System, a Next Group traz pela primeira vez
-                    ao Brasil uma ferramenta de avaliação DISC tão completa e integrada.
+                    ao Brasil uma ferramenta de avaliação DISC completa e integrada.
                 </p>
             </div>
         </div>
@@ -187,7 +206,9 @@
         </div>
 
     </div>
-    <a href="#section-advantages" du-smooth-scroll><button class="btn-down-arrow"></button></a>
+    <a href="#section-advantages" du-smooth-scroll>
+        <button class="btn-down-arrow"></button>
+    </a>
 </section>
 
 <section class="section-advantages" id="section-advantages">
@@ -281,11 +302,13 @@
             </div>
         </div>
     </div>
-    <a href="#section-calculator" du-smooth-scroll><button class="btn-down-arrow"></button></a>
+    <a href="#section-calculator" du-smooth-scroll>
+        <button class="btn-down-arrow"></button>
+    </a>
 </section>
 
 
-<section class="section-calculator" id="section-calculator" ng-controller="CalculatorCtrl as vm" >
+<section class="section-calculator" id="section-calculator" ng-controller="CalculatorCtrl as vm">
     <div class="calculator-background">
         <div class="container">
             <div class="row">
@@ -297,7 +320,8 @@
                         (Retorno sobre Investimento)
                     </p>
                     <p class="section-info">
-                        Calcule o que você vai poupar em tempo e dinheiro, além do grande impacto no ambiente e na performance da sua empresa.
+                        Calcule o que você vai poupar em tempo e dinheiro, além do grande impacto no ambiente e na
+                        performance da sua empresa.
                     </p>
                     <!--
                     <div class="form-horizontal form-group">
@@ -319,9 +343,11 @@
     <div collapse="!vm.showResults">
         <div class="container">
             <h3 ng-show="vm.showWarningMessage">
-                Para melhor atendê-lo e fazermos uma proposta adequada a suas necessidades, por favor, entre em contato conosco.
+                Para melhor atendê-lo e fazermos uma proposta adequada a suas necessidades, por favor, entre em contato
+                conosco.
             </h3>
-            <h3 ng-show="vm.discountPercentage < 0">Pelo volume de testes que você precisa, aconselhamos a compra de nossos testes avulsos.</h3>
+            <h3 ng-show="vm.discountPercentage < 0">Pelo volume de testes que você precisa, aconselhamos a compra de
+                nossos testes avulsos.</h3>
             <div class="row" ng-show="(!vm.showWarningMessage || vm.discountPercentage >= 0)">
                 <div class="col-md-4">
                     <table class="calculator-table">
@@ -331,7 +357,8 @@
                             </td>
                             <td>
                                 <strong>Custo de um pacote de testes ilimitados em relação aos custos avulsos</strong>
-                                <p ng-show="vm.discountPercentage >= 1"><strong>{{vm.discountPercentage}}%</strong> de desconto relativo à compra de testes avulsos</p>
+                                <p ng-show="vm.discountPercentage >= 1"><strong>{{vm.discountPercentage}}%</strong> de
+                                    desconto relativo à compra de testes avulsos</p>
                             </td>
                         </tr>
                     </table>
@@ -340,7 +367,8 @@
                     <table class="calculator-table">
                         <tr>
                             <td>
-                                <percentage-progress class="circle-green" ratio="vm.percentageSavedPerProcess"></percentage-progress>
+                                <percentage-progress class="circle-green"
+                                                     ratio="vm.percentageSavedPerProcess"></percentage-progress>
                             </td>
                             <td>
                                 <strong>Recursos poupados por processo</strong>
@@ -430,7 +458,9 @@
             </tr>
         </table>
     </div>
-    <a href="#section-contact" du-smooth-scroll><button class="btn-down-arrow"></button></a>
+    <a href="#section-contact" du-smooth-scroll>
+        <button class="btn-down-arrow"></button>
+    </a>
 </section>
 
 <section class="section-contact" id="section-contact">
@@ -439,8 +469,9 @@
             <div class="col-xs-12">
                 <h1 class="section-title">Contato</h1>
                 <div mouse-activatable>
-                    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d914.2125268003132!2d-46.68889299570092!3d-23.573826337748624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce577320554901%3A0x12f9dd69da08c0f6!2sAv.+Brg.+Faria+Lima%2C+1893+-+Jardim+Paulistano%2C+S%C3%A3o+Paulo+-+SP%2C+01452-001!5e0!3m2!1sen!2sbr!4v1429906931596"
-                            ></iframe>
+                    <iframe class="map"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d914.2125268003132!2d-46.68889299570092!3d-23.573826337748624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce577320554901%3A0x12f9dd69da08c0f6!2sAv.+Brg.+Faria+Lima%2C+1893+-+Jardim+Paulistano%2C+S%C3%A3o+Paulo+-+SP%2C+01452-001!5e0!3m2!1sen!2sbr!4v1429906931596"
+                    ></iframe>
                 </div>
             </div>
         </div>
@@ -483,7 +514,8 @@
                         <label for="input-message">Mensagem:</label>
                         <textarea id="input-message" class="form-control" required ng-model="vm.message"></textarea>
                     </div>
-                    <div class="alert" ng-class="vm.result" ng-show="vm.submitted" role="alert">{{ vm.resultMessage }}</div>
+                    <div class="alert" ng-class="vm.result" ng-show="vm.submitted" role="alert">{{ vm.resultMessage }}
+                    </div>
                     <div class="submit-container">
                         <button type="submit" ng-disabled="vm.submitButtonDisabled" class="contact-btn">Enviar</button>
                     </div>
